@@ -15,7 +15,7 @@ import utils.ipfinderclient.IpFinderWClient;
 
 /**
  * Class Application - Play! Framework controller
- * details : Here are defined the controllers associated to the App
+ * details : Here are defined the controllers associated to the Application
  * @author : JDS (TD)
  * @version : 1.0 - Initial version
  */
