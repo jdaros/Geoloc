@@ -1,0 +1,103 @@
+     [exec] [0m[[0minfo[0m] [0mLoading project definition from /home/telecomdesign/Public/TDEvaluation/Workspace/Geoloc/project[0m
+     [exec] [0m[[0minfo[0m] [0mSet current project to Geoloc (in build file:/home/telecomdesign/Public/TDEvaluation/Workspace/Geoloc/)[0m
+     [exec] [0m[[0minfo[0m] [0mApplicationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m ApplicationTest.renderTemplate[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test ApplicationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.037 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m1 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mutils.ipfinderclient.IpFinderWClientTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m utils.ipfinderclient.IpFinderWClientTest.getTestNominal[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m utils.ipfinderclient.IpFinderWClientTest.getTestRobustness[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test utils.ipfinderclient.IpFinderWClientTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0020 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m2 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mFunctionalTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m FunctionalTest.findIpTestNominal[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m FunctionalTest.findIpTestWrongIPFormat[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test FunctionalTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0010 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m2 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mIntegrationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m IntegrationTest.test[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test IntegrationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m1 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mPassed: : Total 6, Failed 0, Errors 0, Passed 6, Skipped 0[0m
+     [exec] [0m[[32msuccess[0m] [0mTotal time: 4 s, completed 6 juil. 2013 10:45:51[0m
+     [exec] 1. Waiting for source changes... (press enter to interrupt)
+     [exec] [0m[[0minfo[0m] [0mCompiling 1 Java source to /home/telecomdesign/Public/TDEvaluation/Workspace/Geoloc/target/scala-2.10/classes...[0m
+     [exec] [0m[[0minfo[0m] [0mApplicationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m ApplicationTest.renderTemplate[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test ApplicationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m1 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mutils.ipfinderclient.IpFinderWClientTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m utils.ipfinderclient.IpFinderWClientTest.getTestNominal[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m utils.ipfinderclient.IpFinderWClientTest.getTestRobustness[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test utils.ipfinderclient.IpFinderWClientTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0030 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m2 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mFunctionalTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m FunctionalTest.findIpTestNominal[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m FunctionalTest.findIpTestWrongIPFormat[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test FunctionalTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m2 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mIntegrationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m IntegrationTest.test[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test IntegrationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0010 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m1 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mPassed: : Total 6, Failed 0, Errors 0, Passed 6, Skipped 0[0m
+     [exec] [0m[[32msuccess[0m] [0mTotal time: 4 s, completed 6 juil. 2013 10:46:03[0m
+     [exec] 2. Waiting for source changes... (press enter to interrupt)
+     [exec] [0m[[0minfo[0m] [0mCompiling 1 Java source to /home/telecomdesign/Public/TDEvaluation/Workspace/Geoloc/target/scala-2.10/classes...[0m
+     [exec] [0m[[0minfo[0m] [0mApplicationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m ApplicationTest.renderTemplate[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test ApplicationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0010 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m1 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mutils.ipfinderclient.IpFinderWClientTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m utils.ipfinderclient.IpFinderWClientTest.getTestNominal[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m utils.ipfinderclient.IpFinderWClientTest.getTestRobustness[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test utils.ipfinderclient.IpFinderWClientTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0010 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m2 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mFunctionalTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m FunctionalTest.findIpTestNominal[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m FunctionalTest.findIpTestWrongIPFormat[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test FunctionalTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0010 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m2 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mIntegrationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[32m+[0m IntegrationTest.test[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0m[0m
+     [exec] [0m[[0minfo[0m] [0mTotal for test IntegrationTest[0m
+     [exec] [0m[[0minfo[0m] [0m[34mFinished in 0.0 seconds[0m[0m
+     [exec] [0m[[0minfo[0m] [0m[34m1 tests, 0 failures, 0 errors[0m[0m
+     [exec] [0m[[0minfo[0m] [0mPassed: : Total 6, Failed 0, Errors 0, Passed 6, Skipped 0[0m
+     [exec] [0m[[32msuccess[0m] [0mTotal time: 4 s, completed 6 juil. 2013 10:46:33[0m
+     [exec] 3. Waiting for source changes... (press enter to interrupt)

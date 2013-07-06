@@ -1,0 +1,176 @@
+@(ipInfo: IpInformation, ip: String)
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>Ip Geolocation</title>
+    
+    <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.4/js/esri/css/esri.css">
+    
+	<style>
+	  html, body {
+	    padding: 0;
+	    margin: 0;
+	    height: 100%;
+	  }
+	  
+	   body {
+	    
+	    background: -webkit-radial-gradient( center, circle, red, blue);
+		background: -moz-radial-gradient( center, circle, red, blue);
+		background: -o-radial-gradient( center, circle, red, blue);
+		background: radial-gradient( circle at center, red, blue);
+	  }
+	  
+	   #mapDiv {
+	  	 
+		margin-left: 10%;
+		margin-right: 10%;
+		height: 100%;
+	    
+		-moz-box-shadow: 8px 8px 12px #000; 
+		-webkit-box-shadow: 8px 8px 12px #000; 
+		-o-box-shadow: 8px 8px 12px #000; 
+		box-shadow: 8px 8px 12px #000; 
+	  
+	  }
+	</style>
+	
+	<script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.4/"></script>
+	
+	<script>
+	
+		/* include Libraries */
+		
+  		dojo.require("esri.map");
+        dojo.require("esri.layers.agstiled");
+        dojo.require("esri.tasks.locator");
+        dojo.require("esri.toolbars.draw");
+        dojo.require("esri.dijit.InfoWindowLite");
+        
+  		var map;
+  		var locator;
+  		 
+  		/*
+  		* Initialize ArcGis Map Centered on IP lat/lon coordinates
+  		*/
+  		
+  		function init() {
+  		
+    		map = new esri.Map("mapDiv", {
+		      center: [@ipInfo.longitude, @ipInfo.latitude],
+		      zoom: 15,
+		      basemap: "streets"
+		      
+		    });
+		    
+		    locator = new esri.tasks.Locator("http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer")
+		     
+			dojo.connect(map, "onLoad", initGraphics);
+  		}
+  		/* End of init() function */
+  		
+  	
+  		/*
+  		* Initialize the markers 
+  		*/
+  		
+  		function initGraphics(){
+  		 
+		    map.graphics.clear();
+
+			var labelIP = "Device current position (Web Service geolocation)";
+			generateMarker(@ipInfo.latitude,@ipInfo.longitude,labelIP, [255,0,0])
+
+	  		if(navigator.geolocation){
+	  		
+			    navigator.geolocation.getCurrentPosition(function(position){
+			    
+			        var myCurrentlatitude = position.coords.latitude;
+			        var myCurrentlongitude = position.coords.longitude;
+					
+					var labelPos = "My current position (HTML5 geolocation)";
+					
+					generateMarker(myCurrentlatitude,myCurrentlongitude,labelPos,[0,200,100]);	  		
+			    });	
+			}
+			else {
+				alert("HTML5 geolocation is not supported by your browser");
+			}
+			dojo.connect(map.graphics, "onClick", addPoint);
+			
+		}
+		/* End of initGraphics() function */
+		
+			
+  		/*
+  		* Function onClick on the map, to show the information panel of the clicked marker
+  		* Param evt - event detected
+  		*/
+  		function addPoint(evt) {
+
+			  var g = evt.graphic;
+	          map.infoWindow.setContent(g.getContent());
+	          map.infoWindow.setTitle(g.getTitle());
+	          map.infoWindow.show(evt.screenPoint,map.getInfoWindowAnchor(evt.screenPoint));
+		}
+		/* End of addPoint() function */
+		
+		
+		/*
+		* Function to generate a marker
+		* Param lat - latitude of the marker
+		* Param lon - longitude of the marker
+		* Param label - label of the marker
+		* Param color - color of the marker
+		*/
+		
+		function generateMarker(lat,lon,label, color){
+		
+			var symbol = new esri.symbol.SimpleMarkerSymbol(esri.symbol.SimpleMarkerSymbol.STYLE_CROSS, 100, new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_DASH, new dojo.Color(color), 2));
+			var point = new esri.geometry.Point(lon, lat);
+			var graphic = new esri.Graphic(point, symbol);
+		
+			locator.locationToAddress(point, 100, function(candidate){
+					
+			  if (candidate.address) {
+			  	 var location = esri.geometry.geographicToWebMercator(candidate.location);
+			  	 infoTemplating(graphic,label,candidate.address);
+			  }
+			  else {}
+
+			});
+			map.graphics.add(graphic);
+		}
+		/* End of generateMarker() function */
+		
+		/*
+		* Function to initialize information window
+		* Param graphic - esri.Graphic instance of the marker
+		* Param label   - label of the marker
+		* Param address - postal address of the geographic point 
+		*/
+		
+		function infoTemplating(graphic, label, address){
+		
+			var infoTemplatePos = new esri.InfoTemplate("Location", "Address: ${Address} \n Postal: ${Postal} \n City : ${City}");	
+			infoTemplatePos.setTitle(label);
+			graphic.setAttributes(address);
+			graphic.setInfoTemplate(infoTemplatePos);
+		}
+		/* End of infoTemplating() function */
+		
+
+		dojo.ready(init); 
+	</script>
+	
+  </head>
+  
+  <body class="claro">
+  	<div id="mapDiv"></div>
+  </body>
+  
+</html>

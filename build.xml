@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project name="checkOperatingSystem" default="checkOS">
+	<property name="play.home" value="/usr/local/bin/play"/>
+    <!--checking if for windows and non windows OS-->
+    <target depends="ifOSNotWindows" name="checkOS"/>
+ 
+        <condition property="isOSUnix">
+            <os family="unix" />
+        </condition>
+ 
+        <condition property="isOSWindows">
+            <os family="windows" />
+        </condition>
+
+	<!-- if the OS is windows call the target run.script.windows -->
+    <target name="ifOSWindows" if="isOSWindows">
+        <echo>is windows........</echo>
+        <antcall target="runscript.windows"/>
+    </target>
+ 
+    <!-- if the OS is not windows call the target run.script.unix-->
+    <target name="ifOSNotWindows" if="isOSUnix">
+        <echo>is unix........</echo>
+        <antcall target="runscript.unix"/>
+    </target>
+	
+	<target name="runscript.windows">
+        <echo>This is a Windows machine.</echo>
+		<record name="logfile" action="start" append="false" />
+        <exec dir="." executable="cmd" >
+            <arg line="${play.home} test'"/>
+        </exec>
+		<record name="logfile" action="stop"/>
+	</target>
+
+    <target name="runscript.unix">
+        <echo>This is an Unix machine.</echo>
+    	<record name="logfile" action="start" append="false" />
+        <exec dir="./" executable="/bin/sh">
+                <arg line="${play.home} test"/>
+      
+        </exec>
+    	<record name="logfile" action="stop"/>
+    </target>
+</project>
